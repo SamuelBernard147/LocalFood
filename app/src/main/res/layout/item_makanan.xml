@@ -38,8 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/item_name"
             android:layout_marginLeft="10dp"
-            android:maxLines="2"
             android:layout_toRightOf="@id/item_img"
+            android:maxLines="2"
             android:text="@string/deskripsi"
             android:textAppearance="@android:style/TextAppearance.Material.Small" />
 

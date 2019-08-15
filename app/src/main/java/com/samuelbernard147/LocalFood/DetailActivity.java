@@ -11,24 +11,32 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.squareup.picasso.Picasso;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class DetailActivity extends AppCompatActivity {
-    private TextView Deskripsi, Penyajian, Bahan, Variasi;
-    private ImageView Gambar;
     private String nama, gambar, deskripsi, penyajian, bahan, variasi;
+    @BindView(R.id.txt_desc)
+    TextView Deskripsi;
+    @BindView(R.id.txt_penyajian)
+    TextView Penyajian;
+    @BindView(R.id.txt_bahan)
+    TextView Bahan;
+    @BindView(R.id.txt_variasi)
+    TextView Variasi;
+    @BindView(R.id.img_makanan)
+    ImageView Gambar;
+    @BindView(R.id.collapsing_toolbar)
     CollapsingToolbarLayout collapsingToolbarLayout;
-    private Toolbar toolbar;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.activity_detail);
-
-        Deskripsi = findViewById(R.id.txt_desc);
-        Penyajian = findViewById(R.id.txt_penyajian);
-        Bahan = findViewById(R.id.txt_bahan);
-        Variasi = findViewById(R.id.txt_variasi);
-        Gambar = findViewById(R.id.img_makanan);
+        ButterKnife.bind(this);
 
         Bundle extras = getIntent().getExtras();
         nama = extras.getString("NAMA");
@@ -48,12 +56,10 @@ public class DetailActivity extends AppCompatActivity {
         toolbar.setTitle(nama);
         setSupportActionBar(toolbar);
 
-        CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle(nama);
         collapsingToolbarLayout.setCollapsedTitleTextColor(
                 ContextCompat.getColor(this, R.color.colorWhite));
         collapsingToolbarLayout.setExpandedTitleColor(
                 ContextCompat.getColor(this, R.color.colorWhite));
-
     }
 }
