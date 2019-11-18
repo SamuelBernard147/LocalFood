@@ -1,1 +1,2 @@
 # LocalFood
+Simple recyclerview implementation
