@@ -1,2 +1,2 @@
 # LocalFood
-Simple recyclerview implementation
+Sample project of Android recyclerview implementation
